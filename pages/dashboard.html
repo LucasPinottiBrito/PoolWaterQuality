@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <title>
+    IT Pool Dashboard
+  </title>
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <!-- Nucleo Icons -->
+  <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+</head>
+
+<body class="preload g-sidenav-show   bg-gray-100">
+  <div class="spinner-box"><span class="spinner"></span></div>
+  <div class="min-height-300 bg-primary position-absolute w-100"></div>
+  <aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 h-100" id="sidenav-main">
+    <div class="sidenav-header">
+      <a class="navbar-brand h-100 w-100" href="#">
+        <img src="../assets/img/logos/My project-1.png" class="navbar-brand-img h-100" alt="main_logo">
+        <span class="font-weight-bold">IT Pool control</span>
+      </a>
+    </div>
+    <hr class="horizontal dark mt-0">
+    <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="./dashboard.html">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Dashboard</span>
+          </a>
+        </li><!--
+        <li class="nav-item">
+          <a class="nav-link " href="./tables.html">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Tables</span>
+          </a>
+        </li>-->
+        <li class="nav-item mt-3">
+          <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Water monitor</h6>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="./poolStatus.html">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Pool</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="./reservStatus.html">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Reservatory</span>
+          </a>
+        </li>
+        <li class="nav-item mt-3">
+          <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="#">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Profile</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="./sign-in.html">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-single-copy-04 text-warning text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Sign In</span>
+          </a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link " href="#">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-collection text-info text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Sign Up</span>
+          </a>
+        </li> -->
+        <li class="nav-item mt-3">
+          <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Updates</h6>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="./firmware.html">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-collection text-info text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Firmware</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main class="main-content position-relative border-radius-lg ">
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
+      <div class="container-fluid py-1 px-3">
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+          <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+          </div>
+          <ul class="navbar-nav  justify-content-end">
+            <li class="nav-item d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-white font-weight-bold px-0">
+                <i class="fa fa-user me-sm-1"></i>
+                <span class="d-sm-inline d-none">Sign In</span>
+              </a>
+            </li>
+            <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
+                <div class="sidenav-toggler-inner">
+                  <i class="sidenav-toggler-line bg-white"></i>
+                  <i class="sidenav-toggler-line bg-white"></i>
+                  <i class="sidenav-toggler-line bg-white"></i>
+                </div>
+              </a>
+            </li>
+            <!-- <li class="nav-item px-3 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-white p-0">
+                <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
+              </a>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+    <div class="container-fluid py-4 h-100">
+      <div class="col-lg-12 mb-lg-0 mb-4 h-100">
+        <div class="card shadow-none">
+          <div class="card-header pb-0 p-3">
+            <div class="d-flex justify-content-between">
+              <h6 class="mb-2">Pool datas</h6>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xl-3 col-sm-6 mb-2 mt-2">
+              <div class="card">
+                <div class="card-body p-3">
+                  <div class="row h-100">
+                    <div class="col-8 h-100">
+                      <div class="numbers">
+                        <p class="text-sm mb-0 text-uppercase font-weight-bold">PH</p>
+                        <h5 class="font-weight-bolder" id="PH">
+                          
+                        </h5>
+                        <p class="text-sm mb-0 text-uppercase font-weight-bold">Status:
+                          <span id="PHstatus" class="badge badge-sm"></span>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-4 text-end">
+                      <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
+                        <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                      </div>
+                    </div>  
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 mb-2 mt-2">
+              <div class="card">
+                <div class="card-body p-3">
+                  <div class="row h-100">
+                    <div class="col-8 h-100">
+                      <div class="numbers">
+                        <p class="text-sm mb-0 text-uppercase font-weight-bold">Turbidity</p>
+                        <h5 class="font-weight-bolder" id="NTU">
+                          
+                        </h5>
+                        <p class="text-sm mb-0 text-uppercase font-weight-bold">Status: 
+                          <span id="NTUstatus" class="badge badge-sm"></span>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-4 text-end">
+                      <div class="icon icon-shape bg-gradient-danger shadow-danger text-center rounded-circle">
+                        <i class="ni ni-world text-lg opacity-10" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 mb-2 mt-2">
+              <div class="card">
+                <div class="card-body p-3">
+                  <div class="row h-100">
+                    <div class="col-8 h-100">
+                      <div class="numbers">
+                        <p class="text-sm mb-0 text-uppercase font-weight-bold">TDS</p>
+                        <h5 class="font-weight-bolder" id="TDS">
+                          
+                        </h5>
+                        <p class="text-sm mb-0 text-uppercase font-weight-bold">Status: 
+                          <span id="TDSstatus" class="badge badge-sm">Working</span>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-4 text-end">
+                      <div class="icon icon-shape bg-gradient-success shadow-success text-center rounded-circle">
+                        <i class="ni ni-paper-diploma text-lg opacity-10" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 mb-2 mt-2">
+              <div class="card">
+                <div class="card-body p-3">
+                  <div class="row h-100">
+                    <div class="col-8 h-100">
+                      <div class="numbers">
+                        <p class="text-sm mb-0 text-uppercase font-weight-bold">Temperature </p>
+                        <h5 class="font-weight-bolder" id="Temp">
+                          
+                        </h5>
+                        <p class="text-sm mb-0 text-uppercase font-weight-bold">Status: 
+                          <span id="Tempstatus" class="badge badge-sm"></span>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-4 text-end">
+                      <div class="icon icon-shape bg-gradient-warning shadow-warning text-center rounded-circle">
+                        <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-lg-12 mb-lg-0 mb-4 h-100 d-flex flex-column">
+          <div class="card">
+            <div class="card-header pb-0 p-3">
+              <div class="d-flex justify-content-between">
+                <h6 class="mb-2">Chart datas</h6>
+              </div>
+            </div>
+            <div class="Chart">
+              <canvas id="chart" class="chart-canvas" height="300">
+
+              </canvas>
+            </div>
+            <div class="container" id="btnContainer">
+              <button class="btn active btnFilter" id="btnPH"> PH </button>
+              <button class="btn btnFilter" id="btnNTU"> NTU </button>
+              <button class="btn btnFilter" id="btnTDS"> TDS </button>
+              <button class="btn btnFilter" id="btnTemp"> Temp </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer pt-3  ">
+        <div class="container-fluid">
+          <div class="row align-items-center justify-content-lg-between">
+            <div class="col-lg-6 mb-lg-0 mb-4">
+              <div class="copyright text-center text-sm text-muted text-lg-start">
+                © <script>
+                  document.write(new Date().getFullYear())
+                </script>,
+                made by
+                <a href="https://itfast.com.br/site/" class="font-weight-bold" target="_blank">IT Fast</a>.
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                <li class="nav-item">
+                  <a href="https://itfast.com.br/site/" class="nav-link text-muted" target="_blank">IT Fast</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link text-muted">About Us</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </main>
+  <!-- <div class="fixed-plugin">
+    <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
+      <i class="fa fa-cog py-2"> </i>
+    </a>
+    <div class="card shadow-lg">
+      <div class="card-header pb-0 pt-3 ">
+        <div class="float-start">
+          <h5 class="mt-3 mb-0">Argon Configurator</h5>
+          <p>See our dashboard options.</p>
+        </div>
+        <div class="float-end mt-4">
+          <button class="btn btn-link text-dark p-0 fixed-plugin-close-button">
+            <i class="fa fa-close"></i>
+          </button>
+        </div>
+         End Toggle Button 
+      </div>
+      <hr class="horizontal dark my-1">
+      <div class="card-body pt-sm-3 pt-0 overflow-auto">
+        <-- Sidebar Backgrounds 
+        <div>
+          <h6 class="mb-0">Sidebar Colors</h6>
+        </div>
+        <a href="javascript:void(0)" class="switch-trigger background-color">
+          <div class="badge-colors my-2 text-start">
+            <span class="badge filter bg-gradient-primary active" data-color="primary" onclick="sidebarColor(this)"></span>
+            <span class="badge filter bg-gradient-dark" data-color="dark" onclick="sidebarColor(this)"></span>
+            <span class="badge filter bg-gradient-info" data-color="info" onclick="sidebarColor(this)"></span>
+            <span class="badge filter bg-gradient-success" data-color="success" onclick="sidebarColor(this)"></span>
+            <span class="badge filter bg-gradient-warning" data-color="warning" onclick="sidebarColor(this)"></span>
+            <span class="badge filter bg-gradient-danger" data-color="danger" onclick="sidebarColor(this)"></span>
+          </div>
+        </a>
+        <-- Sidenav Type -
+        <div class="mt-3">
+          <h6 class="mb-0">Sidenav Type</h6>
+          <p class="text-sm">Choose between 2 different sidenav types.</p>
+        </div>
+        <div class="d-flex">
+          <button class="btn bg-gradient-primary w-100 px-3 mb-2 active me-2" data-class="bg-white" onclick="sidebarType(this)">White</button>
+          <button class="btn bg-gradient-primary w-100 px-3 mb-2" data-class="bg-default" onclick="sidebarType(this)">Dark</button>
+        </div>
+        <p class="text-sm d-xl-none d-block mt-2">You can change the sidenav type just on desktop view.</p>
+        - Navbar Fixed -
+        <div class="d-flex my-3">
+          <h6 class="mb-0">Navbar Fixed</h6>
+          <div class="form-check form-switch ps-0 ms-auto my-auto">
+            <input class="form-check-input mt-1 ms-auto" type="checkbox" id="navbarFixed" onclick="navbarFixed(this)">
+          </div>
+        </div>
+        <hr class="horizontal dark my-sm-4">
+        <div class="mt-2 mb-5 d-flex">
+          <h6 class="mb-0">Light / Dark</h6>
+          <div class="form-check form-switch ps-0 ms-auto my-auto">
+            <input class="form-check-input mt-1 ms-auto" type="checkbox" id="dark-version" onclick="darkMode(this)">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!--   Core JS Files   -->
+  <script src="../assets/js/core/popper.min.js"></script>
+  <script src="../assets/js/core/bootstrap.min.js"></script>
+  <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script src="../assets/js/plugins/chartjs.min.js"></script>
+  <script>
+      $(window).on("load", function () {
+        $(".spinner-box").fadeOut("slow");
+      });
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+      var options = {
+        damping: '0.5'
+      }
+      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+  </script>
+  <!-- Github buttons -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="../assets/js/argon-dashboard.min.js?v=2.0.4"></script>
+  <script src="../Imports/azurestoragejs-3.0.100/azurestoragejs-3.0.100/bundle/azure-storage.table.min.js"></script>
+  <script src="../assets/js/dashdatabrow.js"></script>
+</body>
+
+</html>
